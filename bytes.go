@@ -1,6 +1,7 @@
 package bytes
 
 import (
+	"bytes"
 	"encoding/binary"
 	"encoding/hex"
 	"errors"
@@ -319,4 +320,9 @@ func LeftPadBytes(slice []byte, l int) []byte {
 	copy(padded[l-len(slice):], slice)
 
 	return padded
+}
+
+// BytesCombine
+func BytesCombine(data ...[]byte) []byte {
+	return bytes.Join(data, []byte(""))
 }
